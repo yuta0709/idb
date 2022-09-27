@@ -1,3 +1,6 @@
 #!/bin/bash
 
-./mvnw spring-boot:run -Duser.timezone=Asia/Tokyo
+
+./wait-for-it.sh mysql:3306
+
+java -jar ./api.jar -Duser.timezone=Asia/Tokyo
