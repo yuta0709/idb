@@ -14,7 +14,7 @@ public class IdeaDto {
     public static class IdeaCreateRequest{
         public String title;
         public String description;
-        public LocalDateTime deadline;
+        public String deadline;
     }
 
     public static class IdeaPageRequest{
@@ -42,7 +42,7 @@ public class IdeaDto {
         public int id;
         public String title;
         public String description;
-        public LocalDateTime deadline;
+        public String deadline;
         @JsonProperty("created_at")
         public LocalDateTime createdAt;
     }
@@ -59,7 +59,7 @@ public class IdeaDto {
         public int id;
         public String title;
         public String description;
-        public LocalDateTime deadline;
+        public String deadline;
         @JsonProperty("created_at")
         public LocalDateTime createdAt;
         public List<CommentInIdea> comments;
@@ -96,7 +96,7 @@ public class IdeaDto {
         public int id;
         public String title;
         public String description;
-        public LocalDateTime deadline;
+        public String deadline;
         @JsonProperty("created_at")
         public LocalDateTime createdAt;
     }

@@ -13,7 +13,7 @@ public class Idea {
 
     public Idea() {}
 
-    public Idea(String title, String description, LocalDateTime deadline){
+    public Idea(String title, String description, String deadline){
         this.title = title;
         this.description = description;
         this.deadline = deadline;
@@ -42,9 +42,9 @@ public class Idea {
         return description;
     }
 
-    private LocalDateTime deadline;
+    private String deadline;
 
-    public LocalDateTime getDeadline() {
+    public String getDeadline() {
         return deadline;
     }
 

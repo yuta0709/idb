@@ -1,16 +1,14 @@
-from datetime import datetime
-import re
 import requests
 
 
 API_ORIGIN = "http://localhost:8080"
 
 
-def post_idea(title: str, description: str, deadline: datetime):
+def post_idea(title: str, description: str, deadline: str):
     data = {
         "title": title,
         "description": description,
-        "deadline": deadline.isoformat()
+        "deadline": deadline
     }
     res = requests.post(f"{API_ORIGIN}/ideas", json=data)
     return res.json()
@@ -41,7 +39,7 @@ def post_comment(comment: str, idea_id: int):
 def main():
     title = "どこでもドア"
     description =  "片開き戸を模した道具。目的地を音声や思念などで入力した上で扉を開くと、その先が目的地になる"
-    deadline = datetime(2100, 1, 1)
+    deadline = "2100年"
     print(post_idea(title, description, deadline))
 
 
