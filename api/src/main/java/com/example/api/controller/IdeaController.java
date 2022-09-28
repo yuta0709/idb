@@ -12,7 +12,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-
 import java.util.NoSuchElementException;
 
 
@@ -28,7 +27,7 @@ public class IdeaController {
     public IdeaDto.IdeaPage ideasByQuery(@RequestParam("page") int page, @RequestParam("limit") int limit) {
         System.out.print("front/ideas");
         var p = this.ideaRepository.findAll(PageRequest.of(page, limit, Sort.by("id")));
-        if(page > p.getTotalPages()){
+        if(page >= p.getTotalPages()){
             throw new NoSuchElementException();
         }
         return new IdeaDto.IdeaPage(p.getContent(), (int) p.getTotalElements());
@@ -37,7 +36,7 @@ public class IdeaController {
     @GetMapping("ideas")
     public IdeaDto.IdeaPage ideas(@RequestBody IdeaDto.IdeaPageRequest query) {
         var page = this.ideaRepository.findAll(PageRequest.of(query.page, query.limit, Sort.by("id")));
-        if(query.page > page.getTotalPages()){
+        if(query.page >= page.getTotalPages()){
             throw new NoSuchElementException();
         }
         return new IdeaDto.IdeaPage(page.getContent(), (int) page.getTotalElements());
