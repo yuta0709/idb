@@ -1,5 +1,14 @@
 # idb
 
+## 準備
+
+`front`に`.env.local`を配置して以下を記載
+
+```text
+NEXT_PUBLIC_API_ORIGIN="YOUR_API_ORIGIN"
+
+```
+
 ## 実行
 
 ```console
