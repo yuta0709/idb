@@ -21,3 +21,11 @@ services:
       DB_USER: dev
       DB_PASSWORD: password
       DB_NAME: app
+
+  front:
+    build:
+      context: front
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_ORIGIN: http://localhost:8080
