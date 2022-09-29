@@ -17,21 +17,8 @@ public class IdeaDto {
         public String deadline;
     }
 
-    public static class IdeaPageRequest{
-        public int page;
-        public int limit;
-    }
 
-    public static class IdeaPage{
-        public IdeaPage(List<Idea> ideas, int total){
-            this.ideas = ideas.stream().map(SimpleIdea::new).collect(Collectors.toList());
-            this.total = total;
-        }
-        public List<SimpleIdea> ideas;
-        public int total;
-    }
-
-    private static class SimpleIdea{
+    public static class SimpleIdea{
         public SimpleIdea(Idea idea){
             this.id = idea.getId();
             this.title = idea.getTitle();
