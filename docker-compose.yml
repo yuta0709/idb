@@ -3,8 +3,6 @@ services:
   mysql:
     build:
       context: mysql
-    ports:
-      - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: "password"
       MYSQL_USER: "dev"
@@ -27,5 +25,3 @@ services:
       context: front
     ports:
       - "3000:3000"
-    environment:
-      NEXT_PUBLIC_API_ORIGIN: http://localhost:8080
